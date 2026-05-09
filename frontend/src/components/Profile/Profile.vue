@@ -20,8 +20,6 @@ import AnimeNyasha from "@/components/Profile/AnimeNyasha.vue";
         <div class="col-lg-9">
           <StatusBadge/>
           <Mirita/>
-          <Subtitle/>
-          <InfoList/>
           <TechList/>
           <Socials/>
         </div>
