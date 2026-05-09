@@ -1,0 +1,32 @@
+services:
+ # nginx:
+ #   container_name: mira-nginx
+ #   build:
+ #     context: .
+ #     args:
+ #       APP_ENV: ${APP_ENV}
+ #     dockerfile: ./nginx/Dockerfile
+ #   environment:
+ #     APP_ENV: ${APP_ENV}
+ #   ports:
+ #     - "80:80"
+
+  frontend:
+    container_name: mira-frontend
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/vue-app
+      - /vue-app/node_modules
+
+  backend:
+    container_name: mira-backend
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/express-app
+      - /express-app/node_modules
