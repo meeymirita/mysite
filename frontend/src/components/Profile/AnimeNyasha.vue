@@ -7,7 +7,6 @@
 </template>
 
 <style scoped>
-
 .avatar {
   width: 247px;
   height: 271px;

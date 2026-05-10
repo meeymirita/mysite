@@ -20,3 +20,9 @@ model User {
   city String
   stack String
 }
+
+model Skills {
+  id Int @id @default(autoincrement())
+  technology String
+  icons String
+}

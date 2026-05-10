@@ -1,25 +1,47 @@
 <script setup lang="ts">
+import {computed, onMounted} from "vue";
+import {useUserStore} from "@/stores/profile.store.ts";
 
+const userStore = useUserStore();
+
+onMounted( async () => {
+  await userStore.fetchUser();
+})
+
+const parseStringProfession = computed(() => {
+  const profession = userStore.user?.profession;
+  if (!profession) return '';
+
+  const words = profession.split(' ');
+  const startRow = words.slice(0, 3).join(' ');
+  const newValue = words[3];
+
+  const lastElement =
+      `<a style="color:#ff4fa0" href="https://kontur-lite.ru/">${newValue}</a>`;
+
+  return `${startRow} ${lastElement}`;
+})
 </script>
 
 <template>
-  <h1 class="mt-3">Никита <span>/ mirita</span></h1>
-  <p class="subtitle">
-    backend developer at <a style=" color: #ff4fa0" href="https://kontur-lite.ru/">Контур</a> • 1
-    year experience
-  </p>
-  <div class="info-list mb-4">
-    <div class="info-box">
-      <span>Возраст</span>
-      <strong>22</strong>
-    </div>
-    <div class="info-box">
-      <span>Город</span>
-      <strong>Новосибирск</strong>
-    </div>
-    <div class="info-box">
-      <span>Stack</span>
-      <strong>PHP / Vue</strong>
+  <div v-if="userStore.user">
+    <h1 class="mt-3">{{userStore.user.fullName}} <span>/ {{userStore.user.userName}}</span></h1>
+    <p class="subtitle">
+      <a v-html="parseStringProfession"></a> • {{userStore.user.experience}}
+    </p>
+    <div class="info-list mb-4">
+      <div class="info-box">
+        <span>Возраст</span>
+        <strong>{{userStore.user.age}}</strong>
+      </div>
+      <div class="info-box">
+        <span>Город</span>
+        <strong>{{userStore.user.city}}</strong>
+      </div>
+      <div class="info-box">
+        <span>Stack</span>
+        <strong>{{userStore.user.stack}}</strong>
+      </div>
     </div>
   </div>
 </template>
@@ -27,7 +49,7 @@
 <style scoped>
 .subtitle {
   color: #6b4b5d;
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 25px;
 }
 

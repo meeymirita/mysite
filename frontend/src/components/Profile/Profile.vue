@@ -1,9 +1,6 @@
 <script setup lang="ts">
-
 import StatusBadge from "@/components/Profile/StatusBadge.vue";
 import Mirita from "@/components/Profile/Mirita.vue";
-import Subtitle from "@/components/Profile/Subtitle.vue";
-import InfoList from "@/components/Profile/InfoList.vue";
 import TechList from "@/components/Profile/TechList.vue";
 import Socials from "@/components/Profile/Socials.vue";
 import AnimeNyasha from "@/components/Profile/AnimeNyasha.vue";
@@ -29,8 +26,6 @@ import AnimeNyasha from "@/components/Profile/AnimeNyasha.vue";
 </template>
 
 <style scoped>
-
-
 .profile-card {
   position: relative;
   overflow: hidden;

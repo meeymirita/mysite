@@ -1,8 +1,7 @@
-import { prisma } from "../config/db.js";
+import {prisma} from "../config/db.js";
 
 export async function getUser() {
     let user = await prisma.user.findFirst();
-
     if (!user) {
         user = await prisma.user.create({
             data: {
@@ -16,6 +15,11 @@ export async function getUser() {
             },
         });
     }
-
     return user;
+}
+export async function getList(){
+    return prisma.skills.findMany(
+          { select: { technology: true, icons: true }
+        }
+    );
 }
