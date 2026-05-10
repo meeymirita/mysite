@@ -3,6 +3,7 @@ export const API_ROUTES = {
     user: `user`,
     tech: `user/tech-list`,
     socials: `user/socials`,
+    about: `user/about`,
 };
 export const httpClient = axios.create({
     baseURL: 'http://localhost:3000/',

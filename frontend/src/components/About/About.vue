@@ -1,19 +1,19 @@
 <script setup lang="ts">
+import {useAboutStore} from "@/stores/about.store.ts";
+import {onMounted} from "vue";
 
+const aboutStore = useAboutStore();
+onMounted(async () => { await aboutStore.fetchAbout()})
 </script>
 
 <template>
-  <div class="ui-card p-4 mb-4">
-    <h2 class="section-title">Обо мне</h2>
+  <div class="ui-card p-4 mb-4" v-for="about in aboutStore.about">
+    <h2 class="section-title">{{about.title}}</h2>
     <p class="muted mb-0">
-      Backend разработчик с опытом работы в Контуре.
-      Люблю Laravel, Docker и строить удобные backend-системы.
-      Интересуюсь frontend частью на Vue и TypeScript.
-      Сейчас развиваюсь в сторону архитектуры и DevOps.
+      {{about.desc}}
     </p>
   </div>
 </template>
-
 <style scoped>
 h1 {
   font-size: 52px;

@@ -31,3 +31,10 @@ export async function getSocialsMe(){
         }
     );
 }
+// обо мне
+export async function getAboutMe(){
+    return prisma.aboutMe.findMany(
+        { select: {id :true, title :true, desc :true}
+        }
+    );
+}
