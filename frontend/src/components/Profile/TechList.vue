@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import {onMounted} from "vue";
 import {useTechStore} from "@/stores/tech.store.ts";
-
 const technologies = useTechStore();
-
-onMounted(async () => {
-  console.log(technologies.fetchTech())
-})
+onMounted(async () => {await technologies.fetchTech()})
 </script>
 
 <template>
