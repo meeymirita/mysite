@@ -26,3 +26,15 @@ model Skills {
   technology String
   icons String
 }
+
+model AboutMe {
+  id Int @id @default(autoincrement())
+  title String
+  desc String
+}
+model Socials {
+  id Int @id @default(autoincrement())
+  name String
+  link String
+  icons String
+}

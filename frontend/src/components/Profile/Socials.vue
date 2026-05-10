@@ -1,20 +1,17 @@
 <script setup lang="ts">
-
+import {onMounted} from "vue";
+import {useSocialsStore} from "@/stores/socials.store.ts";
+const socialStore = useSocialsStore();
+onMounted(async () => {
+  await socialStore.fetchSocials()
+})
 </script>
 
 <template>
   <div class="socials mt-4">
-    <a href="https://github.com/meeymirita" target="_blank" class="social-btn">
-      <i class="fa-brands fa-github"></i>
-      GitHub
-    </a>
-    <a href="https://t.me/meeymirita" target="_blank" class="social-btn">
-      <i class="fa-brands fa-telegram"></i>
-      Telegram
-    </a>
-    <a href="https://vk.com/meeymirita" target="_blank" class="social-btn">
-      <i class="fa-brands fa-vk"></i>
-      VK
+    <a v-for="social in socialStore.socials" :social-id="social.id" :href="social.link" target="_blank" class="social-btn">
+      <i :class="social.icons"></i>
+      {{social.name}}
     </a>
   </div>
 </template>

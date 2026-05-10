@@ -11,7 +11,7 @@ onMounted(async () => {
 
 <template>
   <div class="tech-list">
-       <span class="badge-ui" v-for="tech in technologies.tech">
+       <span :tech-id="tech.id" class="badge-ui" v-for="tech in technologies.tech">
            <i :class="tech.icons"></i>
            {{tech.technology}}
        </span>

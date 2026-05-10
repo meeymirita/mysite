@@ -2,6 +2,7 @@ import axios from 'axios';
 export const API_ROUTES = {
     user: `user`,
     tech: `user/tech-list`,
+    socials: `user/socials`,
 };
 export const httpClient = axios.create({
     baseURL: 'http://localhost:3000/',

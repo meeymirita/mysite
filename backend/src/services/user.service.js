@@ -1,5 +1,5 @@
 import {prisma} from "../config/db.js";
-
+// иннформация про меня
 export async function getUser() {
     let user = await prisma.user.findFirst();
     if (!user) {
@@ -17,9 +17,17 @@ export async function getUser() {
     }
     return user;
 }
+// лсит с технологиями
 export async function getList(){
     return prisma.skills.findMany(
-          { select: { technology: true, icons: true }
+          { select: {id:true, technology: true, icons: true }
+        }
+    );
+}
+// для связи данные
+export async function getSocialsMe(){
+    return prisma.socials.findMany(
+        { select: {id :true, name :true, link :true, icons :true }
         }
     );
 }
