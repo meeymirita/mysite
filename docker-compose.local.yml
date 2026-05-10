@@ -1,16 +1,4 @@
 services:
- # nginx:
- #   container_name: mira-nginx
- #   build:
- #     context: .
- #     args:
- #       APP_ENV: ${APP_ENV}
- #     dockerfile: ./nginx/Dockerfile
- #   environment:
- #     APP_ENV: ${APP_ENV}
- #   ports:
- #     - "80:80"
-
   frontend:
     container_name: mira-frontend
     build:
