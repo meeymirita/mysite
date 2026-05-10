@@ -1,45 +1,7 @@
 https://thecode.media/chto-takoe-express-js/
 
-# Express Route Prefix — почему `/user` перестал работать
-
-## Проблема
-
-Было:
-
-```js
-app.use('/user', userRoutes);
-```
-
-и внутри `user.routes.js`:
-
-```js
-router.get('/user', getCurrentUser);
-```
-
-Из-за этого Express объединяет пути:
-
-```txt
-/user + /user
-```
-
-И итоговый URL становится:
-
-```txt
-/user/user
-```
-
-Поэтому запрос на:
-
-```txt
-/user
-```
-
-перестаёт работать.
-
----
-
-# Правильный вариант
-
+# Express Route Prefix — `/user`
+#  вариант 1
 ## app.js
 
 ```js
@@ -215,19 +177,6 @@ router.get('/');
 router.get('/:id');
 router.post('/');
 ```
-
 Без повторения `/user`.
-
 ---
 
-# Почему так делают
-
-Так код:
-
-* чище
-* проще масштабируется
-* меньше повторений
-* удобнее разделять роуты
-* легче поддерживать
-
-Это стандартная практика в Express backend проектах.
