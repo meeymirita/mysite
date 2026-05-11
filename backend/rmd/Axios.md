@@ -11,7 +11,7 @@ const app = createApp(App);
 
 app.use(pinia);
 
-app.mount('#mirita');
+app.mount('#Mirita');
 ```
 ---
 # Использование

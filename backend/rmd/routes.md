@@ -59,7 +59,7 @@ export async function getUser() {
         user = await prisma.user.create({
             data: {
                 fullName: 'Никита',
-                userName: 'mirita',
+                userName: 'Mirita',
                 profession: 'backend developer at Контур',
                 experience: '1 year experience',
                 age: 22,

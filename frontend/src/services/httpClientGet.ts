@@ -6,9 +6,9 @@ export function httpClientGet<T>(route: string, schema: ZodSchema<T>) {
     const data = ref<T | null>(null);
     async function fetchData() {
         const response = await httpClient.get(route);
-        console.log(response.data)
-        console.log(route)
-        console.log(import.meta.env.VITE_API_URL)
+        // console.log(response.data)
+        // console.log(route)
+        // console.log(import.meta.env.VITE_API_URL)
         data.value = schema.parse(response.data);
     }
     return {data, fetchData};
