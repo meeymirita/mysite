@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
-    { path: '/', redirect: '/Mirita' },
-    { path: '/Mirita', component()
+    { path: '/', redirect: '/mirita' },
+    { path: '/mirita', component()
         { return import('../pages/Mirita/Mirita.vue'); },
         children: []
     },
@@ -28,6 +28,12 @@ const routes = [
                 path: 'projects',
                 component() {
                     return import('@/pages/Admin/Projects/IndexProjects.vue');
+                }
+            },
+            {
+                path: 'tech',
+                component() {
+                    return import('@/pages/Admin/Tech/IndexTech.vue');
                 }
             }
         ]

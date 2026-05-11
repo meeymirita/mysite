@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import TechList from "@/components/Profile/TechList.vue";
 const route = useRoute();
 </script>
 <template>
@@ -39,6 +40,15 @@ const route = useRoute();
               :class="{ activeLink: route.path === '/admin/projects' }"
           >
             Projects
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+              to="/admin/tech"
+              class="nav-link custom-link"
+              :class="{ activeLink: route.path === '/admin/tech' }"
+          >
+            TechList
           </RouterLink>
         </li>
       </ul>

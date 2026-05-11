@@ -5,5 +5,6 @@ z.array(
         id:         z.int(),
         technology: z.string(),
         icons:      z.string(),
+        status:      z.boolean(),
     })
 );

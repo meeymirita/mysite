@@ -11,7 +11,7 @@ import AnimeNyasha from "@/components/Profile/AnimeNyasha.vue";
     <div class="profile-overlay"></div>
     <div class="profile-content w-100">
       <div class="row align-items-center g-4">
-        <div class="col-lg-3 text-center text-lg-start">
+        <div class="col-lg-3 text-center">
           <AnimeNyasha/>
         </div>
         <div class="col-lg-9">

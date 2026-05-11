@@ -3,12 +3,11 @@
 </script>
 
 <template>
-  <img src="/public/pink.jpg" class="avatar" alt="">
+  <img src="/public/anima.jpg" class="avatar" alt="">
 </template>
 
 <style scoped>
 .avatar {
-  width: 247px;
   height: 271px;
 
   object-fit: cover;

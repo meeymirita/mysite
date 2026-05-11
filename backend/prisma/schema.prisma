@@ -25,6 +25,7 @@ model Skills {
   id Int @id @default(autoincrement())
   technology String
   icons String
+  status Boolean @default(true)
 }
 
 model AboutMe {

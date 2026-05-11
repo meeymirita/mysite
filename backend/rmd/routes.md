@@ -37,7 +37,7 @@ export default router;
 ## user.controller.js
 
 ```js
-import { getUser } from '../services/user.service.js';
+import { getUser } from '../services/user.service.ts';
 
 export async function getCurrentUser(req, res) {
     const user = await getUser();
@@ -47,7 +47,7 @@ export async function getCurrentUser(req, res) {
 
 ---
 
-## user.service.js
+## user.service.ts
 
 ```js
 import { prisma } from '../config/db.js';
