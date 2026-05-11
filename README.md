@@ -50,7 +50,13 @@
 
 # 🐳 Run Project
 
+
+
 ## Start containers
+
+- frontend/.env.example переименовать в .env
+- backend/dev.db.example переименовать в dev.db
+- backend/.env.example переименовать в в .env
 
 ```bash
 docker compose -f docker-compose.local.yml up -d --build
